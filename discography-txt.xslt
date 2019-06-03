@@ -26,13 +26,13 @@
 
     </xsl:template>
     <xsl:template name="Catalog" match="musicCollection">
-        <xsl:text>Catalog cd: </xsl:text><xsl:text>&#xA;</xsl:text>
-        <xsl:text>|            Title              |       Artist       |       Released      |      Genre       |  Price  |</xsl:text>
+        <xsl:text>Music collection: </xsl:text><xsl:text>&#xA;</xsl:text>
+        <xsl:text>TITLE                                   ARTIST                RELEASED                      GENRE               PRICE  </xsl:text>
         <xsl:text>&#xA;</xsl:text>
         <xsl:text>__________________________________________________________________________________________________________________________________</xsl:text>
         <xsl:text>&#xA;</xsl:text>
         <xsl:for-each select="cd">
-            <xsl:value-of select="concat(title,substring('                                   ',1,36-string-length(title)), artistInfo, substring('                      ',1,22-string-length(artistInfo)), released,substring('                        ',1,30-string-length(released)) , genreInfo, substring('                     ',1,20-string-length(genreInfo)), price, substring('          ',1,10-string-length(price)))"/>
+            <xsl:value-of select="concat(title,substring('                                   ',1,40-string-length(title)), artistInfo, substring('                      ',1,22-string-length(artistInfo)), released,substring('                        ',1,30-string-length(released)) , genreInfo, substring('                     ',1,20-string-length(genreInfo)), price, substring('          ',1,10-string-length(price)))"/>
             <xsl:text>&#xA;</xsl:text>
             <xsl:text>------------------------------------------------------------------------------------------------------------------------------</xsl:text>
             <xsl:text>&#xA;</xsl:text>

@@ -32,7 +32,7 @@
                 <text x="{$linkOffsetX}" y="100" class="graphLink">Report summary</text>
             </a>
 
-            <text x="{$graphTitleOffsetX}" y="{150 + $graphTitleOffsetY}" class="graphTitle" id="albumPriceGraph">Cena albumu</text>
+            <text x="{$graphTitleOffsetX}" y="{150 + $graphTitleOffsetY}" class="graphTitle" id="albumPriceGraph">Price of the album</text>
 
             <xsl:for-each select="cd">
                 <xsl:variable name="name" select="title" />
@@ -60,30 +60,38 @@
 
             <xsl:variable name="albumGenreGraphOffsetY" select="$albumPriceGraphOffsetY + (count(cd) * 40)" />
 
-            <text x="{$graphTitleOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY}" class="graphTitle" id="albumGenreGraph">Podsumowanie</text>
+            <text x="{$graphTitleOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY}" class="graphTitle" id="albumGenreGraph">Summary</text>
 
             <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 50}" class="summaryEntry">
-                Liczba albumów: <xsl:value-of select="statistic/summary/albumCount" />
+                Number of albums: <xsl:value-of select="information/data/numberOfAlbums" />
             </text>
 
             <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 100}" class="summaryEntry">
-                Liczba albumów rockowych: <xsl:value-of select="statistic/summary/rockAlbumCount" />
+                Number of rap albums: <xsl:value-of select="information/data/numberOfRapSongs" />
             </text>
 
             <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 150}" class="summaryEntry">
-                Liczba albumów popowych: <xsl:value-of select="statistic/summary/popAlbumCount" />
+                Number of pop albums: <xsl:value-of select="information/data/numberOfPopSongs" />
             </text>
 
             <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 200}" class="summaryEntry">
-                Liczba innych albumów: <xsl:value-of select="statistic/summary/otherAlbumCount" />
+                Number of hiphop albums: <xsl:value-of select="information/data/numberOfHiphopSongs" />
             </text>
 
             <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 250}" class="summaryEntry">
-                Liczba albumów polskich wykonawców: <xsl:value-of select="statistic/summary/polishAlbumCount" />
+                Number of trap albums: <xsl:value-of select="information/data/numberOfTrapSongs" />
             </text>
 
             <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 300}" class="summaryEntry">
-                Data wygenerowania raportu: <xsl:value-of select="statistic/summary/reportDate" />
+                Number of swing albums: <xsl:value-of select="information/data/numberOfSwingSongs" />
+            </text>
+
+            <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 350}" class="summaryEntry">
+                Number of jazz albums: <xsl:value-of select="information/data/numberOfJazzSongs" />
+            </text>
+
+            <text x="{$summaryEntryOffsetX}" y="{$albumGenreGraphOffsetY + $graphTitleOffsetY + 400}" class="summaryEntry">
+                Number of funk albums: <xsl:value-of select="information/data/numberOfFunkSongs" />
             </text>
 
             <script type="text/ecmascript">
